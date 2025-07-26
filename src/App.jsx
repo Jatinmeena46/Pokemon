@@ -1,3 +1,5 @@
+import Pokemon from "./pokemon"
+
 export const App = ()=>{
-  return <h1>hello</h1>
+  return <Pokemon/>
 }
