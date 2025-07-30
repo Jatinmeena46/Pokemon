@@ -10,13 +10,13 @@ const Pokemon = () => {
             console.log(data);
 
             const detailedPokemonData = data.results.map( async (curPokemon)=>{
-                // console.log(curPokemon.url)
+
                 const res = await fetch(curPokemon.url)
                 const data = await res.json()
-                // console.log(data)
+
                 return data;
             })
-            // console.log(detailedPokemonData)
+
             const detailedResponses = await Promise.all(detailedPokemonData)
             console.log(detailedResponses)
             setPokemon(detailedResponses);
