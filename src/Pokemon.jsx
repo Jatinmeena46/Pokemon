@@ -4,8 +4,8 @@ const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [search, setSearch] = useState(" ");
-  const API = "https://pokeapi.co/api/v2/pokemon?limit=24";
+  const [search, setSearch] = useState("");
+  const API = "https://pokeapi.co/api/v2/pokemon?limit=64";
   const fetchPokemon = async () => {
     try {
       const res = await fetch(API);
@@ -55,22 +55,30 @@ const Pokemon = () => {
 
   return (
     <>
-      <section className="">
-        <header>
-          <h1>pokemon</h1>
+      <section className="p-6 min-h-screen ">
+
+        <header className="text-center">
+          <h1 className="text-4xl font-bold text-gray-600">pokemon</h1>
         </header>
-        <div>
-          <input type="text" placeholder="search Pokemon" value={search}
-           onChange={(e)=>setSearch(e.target.value)}/>
+
+        <div className="flex justify-center m-6">
+          <input
+          type="text"
+          placeholder="search Pokemon"
+           value={search}
+           onChange={(e)=>setSearch(e.target.value)}
+           className="px-4 py-2 focus:outline-none border border-gray-300 rounded shadow w-72 "
+           />
         </div>
-        <div>
-          <ul className="cards">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+
             {searchData.map((currPokemon) => {
               return (
                 <PokemonCards key={currPokemon.id} pokemonData={currPokemon} />
               );
             })}
-          </ul>
+
         </div>
       </section>
     </>
