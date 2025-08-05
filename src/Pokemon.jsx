@@ -55,7 +55,7 @@ const Pokemon = () => {
 
   return (
     <>
-      <section className="p-6 min-h-screen ">
+      <section className="p-6 min-h-screen bg-gray-500">
 
         <header className="text-center">
           <h1 className="text-4xl font-bold text-gray-600">pokemon</h1>

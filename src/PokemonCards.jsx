@@ -2,7 +2,7 @@ import React from "react";
 
 const PokemonCards = ({ pokemonData }) => {
   return (
-    <div className="bg-white rounded-2xl shadow-md p-4 text-center hover:scale-105 transition-all duration-200">
+    <div className="bg-gray-900 rounded-2xl shadow-md p-4 text-center hover:scale-105 transition-all duration-200">
       <figure className="flex justify-center">
         <img
           className="h-28 w-28 object-contain"
